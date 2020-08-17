@@ -2,7 +2,7 @@ version: '3'
 services:
   strapi:
     # image: strapi/strapi
-    build: ./app
+    build: ./strapi
     environment:
       DATABASE_CLIENT: postgres
       DATABASE_NAME: gatsbybase
@@ -10,8 +10,9 @@ services:
       DATABASE_PORT: 5432
       DATABASE_USERNAME: admin
       DATABASE_PASSWORD: secret
-    volumes:
-      - ./app:/srv/app
+    volumes: 
+      - ./strapi:/usr/src/app
+      - strapi_node_modules:/usr/src/app/node_modules
     ports:
       - '1337:1337'
     networks:
@@ -19,7 +20,19 @@ services:
   web:
     build: ./web
     ports:
-      - '8080:8000'
+      - '8000:8000'
+    volumes:
+      - ./web:/usr/src/app
+      - web_node_modules:/usr/src/app/node_modules
+    depends_on: 
+      - strapi
+    links:
+      - "strapi:strapi"
+    networks: 
+      - postgres_link
+volumes: 
+  web_node_modules:
+  strapi_node_modules:
 networks:
   postgres_link:
     external:

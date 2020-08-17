@@ -4,10 +4,10 @@ WORKDIR /usr/src/app
 
 COPY package.json .
 
-RUN yarn global add gatsby-cli
+RUN yarn global add strapi
 
 RUN yarn install
- 
+
 COPY . .
 
-CMD ["gatsby", "develop", "-H", "0.0.0.0"]
+CMD ["strapi", "develop"]
