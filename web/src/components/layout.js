@@ -11,9 +11,11 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import Footer from "./footer"
-import "../assets/stylesheets/layout.scss"
+import "../assets/stylesheets/layout.sass"
 import {ThemeProvider} from 'styled-components'
 import theme from '../assets/stylesheets/theme'
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -28,7 +30,7 @@ const Layout = ({ children }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Header siteTitle={data.site.siteMetadata.title}/>
+      {/* <Header textColor="dark" siteTitle={data.site.siteMetadata.title}/> */}
       <main>{children}</main>
       <Footer/>
     </ThemeProvider>

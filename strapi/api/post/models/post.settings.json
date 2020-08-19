@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "name": "Post"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "category": {
+      "model": "category"
+    },
+    "tags": {
+      "collection": "tag"
+    }
+  }
+}

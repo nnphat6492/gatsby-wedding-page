@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import {
   Container,
   Collapse,
-  Navbar,
+  // Navbar,
   NavbarToggler
 } from 'reactstrap';
+import Navbar from './navbar'
 import Link from './link'
 import Navigation from 'reactstrap-json-nav'
 import navigation from '../data/navigation';
@@ -16,20 +17,7 @@ const Header = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <Navbar color="light" light expand="md">
-      <Container>
-        <Link to="/" className="navbar-brand">
-          <img src={logo} alt="Logo" height="25px"/>
-        </Link>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Navigation
-            json={navigation}
-            link={Link}
-            activeClassName="active"
-          />
-        </Collapse>
-      </Container>
+    <Navbar textColor='dark'>
     </Navbar>
   );
 }

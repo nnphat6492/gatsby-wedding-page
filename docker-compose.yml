@@ -17,6 +17,8 @@ services:
       - '1337:1337'
     networks:
       - postgres_link
+    # command: >
+    #   bash -c "tail -f /dev/null"
   web:
     build: ./web
     ports:

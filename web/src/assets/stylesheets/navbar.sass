@@ -1,0 +1,146 @@
+$foot_font: LibreBaskerville-Regular
+$unFoot_font: Montserrat-Regular
+
+$textDark: #3C3C3C
+$textLight: #FFFFFF
+
+.navbar-wrapper
+  width: 100%
+.nav-text-light
+  color: $textLight
+.nav-text-dark
+  color: $textDark
+.navbar-custom
+  padding: 2rem 4rem
+  display: flex
+  justify-content: space-between
+  align-content: center
+  .nav-logo-and-tagline
+    display: flex
+    align-content: center
+    padding-bottom: 2.3em
+    .nav-logo
+      min-width: 130px
+      img
+        width: 100%
+    .nav-separator-wrapper
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      .nav-separator
+        margin: 0 1.8rem
+        border-left: 1px solid
+        height: 1.6vw
+        width: 0
+    .nav-tagline
+      display: flex
+      justify-content: center
+      align-items: center
+      font-family: Montserrat-Medium
+      font-size: .8rem
+      letter-spacing: 0.4em
+      word-spacing: 0em
+      line-height: 2em
+      text-transform: none
+      font-weight: normal
+  .nav-menu
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 36vw
+    margin-bottom: 0
+    list-style: none
+    .nav-item
+      display: block
+      text-align: center
+      font-family: LibreBaskerville-Regular
+      font-size: .8rem
+      letter-spacing: .6em
+      word-spacing: 0em
+      line-height: 1.5em
+      text-transform: none
+      font-weight: normal
+      padding-bottom: 4em
+      .nav-sub-menu-wrapper
+        position: relative
+        left: 50%
+        .nav-sub-menu
+          display: none
+          position: absolute
+          align-items: center
+          list-style: none
+          background-color: #FAF7F6
+          color: #6e6e6e
+          width: 280px
+          margin-left: -140px
+          margin-top: 20px
+          padding-top: 2.8rem
+          padding-bottom: 2.8rem
+          padding-left: 0
+          .nav-sub-link
+            color: inherit
+            display: block
+            margin-bottom: 2.8rem
+            text-decoration: none
+          .nav-sub-link:last-child
+            display: block
+            margin-bottom: 0
+      &:hover 
+        >a
+          padding-left: 6px
+          border-bottom-width: 1px
+          border-bottom-style: solid 
+          cursor: pointer
+        // text-decoration: underline
+        .nav-sub-menu
+          display: block
+          &:hover
+            display: block
+.clearfix::after
+  content: ""
+  clear: both
+  display: table
+
+@media screen and (max-width: 1920px)
+  .nav-logo
+    width: 14rem
+  .nav-tagline
+    font-size: .9rem
+
+@media screen and (max-width: 1080px)
+  .navbar-wrapper
+    text-align: center
+    .navbar-custom
+      display: inline-block
+      margin-top: 3rem
+      padding: 0
+      width: 60vw
+      .nav-menu
+        display: none
+      .nav-logo-and-tagline
+        justify-content: center !important
+        .nav-logo
+          width: 18rem
+        .nav-separator
+          margin: 0 1.2rem !important
+          height: 2.8rem !important
+        .nav-tagline
+          text-align: start
+          font-size: .8rem
+          width: 8rem !important
+
+
+@media screen and (max-width: 720px)
+  .nav-logo
+    width: 40vw !important
+  .nav-tagline
+    font-size: .8rem !important
+
+@media screen and (max-width: 480px)
+  .nav-logo
+    width: 60vw !important
+  .nav-tagline
+    font-size: .8rem !important
+
+

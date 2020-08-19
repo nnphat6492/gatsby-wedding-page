@@ -1,0 +1,63 @@
+version: "3.7"
+services:
+  postgres:
+    image: postgres:12.2
+    restart: always
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: secret
+      PGDATA: /var/lib/postgresql/data
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      default:
+        aliases:
+          - postgres
+  pgadmin:
+    image: dpage/pgadmin4:4.18
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: nnphat6492@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: Ngu9enph@t
+      PGADMIN_LISTEN_PORT: 80
+    ports:
+      - "8020:80"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    links:
+      - "postgres:pgsql-server"
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - mysql-data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: mysql
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: secret
+    networks:
+      default:
+        aliases:
+          - postgres
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: dev_pma
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - 8183:80
+    depends_on:
+      - mysql
+volumes:
+  db-data:
+  mysql-data:
+  pgadmin-data:

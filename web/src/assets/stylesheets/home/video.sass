@@ -1,0 +1,65 @@
+$contentWidth: calc(72vw + 4.2rem)
+.video
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  hr
+    border-top: 1px solid darkgray
+    opacity: .8
+    width: $contentWidth
+  .video-container
+    width: $contentWidth
+    background-color: #FAF7F6
+    display: flex
+    flex-direction: row
+    align-items: center
+    margin-bottom: 7rem
+    .video-player
+      // background-image: url('/images/homepage/home-video-bg.jpg')
+      // background-size: cover
+      // background-position: 50%
+      width: 36rem
+      height: 24rem
+    .video-desc
+      padding-right: 4rem
+      margin: auto
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      color: grey
+      .video-des1
+        font-family: Montserrat-Regular
+        font-size: .7rem
+        letter-spacing: 0.5em
+        word-spacing: 0em
+        line-height: 2.5em
+        text-transform: none
+        font-weight: normal
+        padding-bottom: 3rem
+      .video-des2
+        font-family: CormorantGaramond-Medium
+        font-size: 1.8rem
+        letter-spacing: 0.05em
+        word-spacing: 0em
+        line-height: 1.15em
+        text-transform: none
+        font-weight: normal
+
+@media screen and (max-width: 1920px)
+  .video-player
+    margin: 5rem 0rem 5rem 5rem
+    width: 36rem
+    height: 24rem
+  hr
+    margin-bottom: 7rem
+    margin-top: 7rem
+
+@media screen and (max-width: 1080px)
+  .video-player
+    width: 600px
+    height: 400px
+  hr
+    margin-bottom: 2.4rem
+    margin-top: 2.4rem

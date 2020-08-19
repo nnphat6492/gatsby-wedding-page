@@ -6,11 +6,12 @@ module.exports = {
     title: `Gatsby Bootstrap Strapi Starter`,
     description: `Gatsby + Strapi = <3`,
     author: `Jeremy Lynch`,
-    siteUrl: `https://gatsby-strapi-starter.netlify.com/`,
+    siteUrl: `http://localhost:8000/`,
+    sourceUrl: `http://localhost:1337/`,
     phone: '12345',
     fax: '12345',
     address: '123 fake street',
-    email: 'contact@test.com'
+    email: 'contact@test.com',
 
   },
   plugins: [
@@ -49,12 +50,13 @@ module.exports = {
       options: {
         apiURL: `http://strapi:1337`,
         queryLimit: 1000, // Default to 100
-        contentTypes: [],
-        // Possibility to login with a strapi user, when content types are not publically available (optional).
-        loginData: {
-          identifier: "",
-          password: "",
-        },
+        contentTypes: ['category', 'post'],
+        singleTypes: ['home-page'],
+        // // Possibility to login with a strapi user, when content types are not publically available (optional).
+        // loginData: {
+        //   identifier: "",
+        //   password: "",
+        // },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

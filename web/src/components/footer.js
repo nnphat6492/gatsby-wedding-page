@@ -1,70 +1,27 @@
-import React from 'react'
-import {Container, Row, Col} from 'reactstrap'
-import { FaFacebookSquare, FaInstagram } from 'react-icons/fa';
-import Link from './link';
-import styled from "styled-components"
-
-const Footer = styled.footer`
-  padding: 3rem 0;
-  background: #f8f9fa;
-  a, a:hover {
-    color: inherit;
-  }
-  ul {
-    color: rgba(0, 0, 0, 0.5);
-    -webkit-padding-start: 0;
-    padding: 0;
-    & > li {
-      list-style: none;
-      a, a:hover {
-        color: inherit;
-      }
+import React, {Component} from "react";
+import  "../assets/stylesheets/footer.sass"
+import logo from "../assets/images/logo_dark.png"
+export default class Footer extends Component{
+    render(){
+        return (
+            <section className="footer">
+                <div className="footer-img-wrapper">
+                    <div className="footer-social-link">
+                        <span>@phongdoanfoto</span>
+                    </div>
+                    <div className="item item-small1"/>
+                    <div className="item item-small2"/>
+                    <div className="item item-small3"/>
+                    <div className="item item-small4"/>
+                    <div className="item item-small5"/>
+                    <div className="item item-small6"/>
+                </div>
+                <div className="footer-description">
+                    <img src={logo} alt="" height="50px"/>
+                    <span>©2019 COPYRIGHT PHONG DOAN FOTO</span>
+                    <span>TO TOP</span>
+                </div>
+            </section>
+        );
     }
-  }
-`
-
-let SocialLink = ({Icon}) => (
-  <Link to="/" className="mr-2">
-    <Icon size={30}/>
-  </Link>
-)
-
-let FooterLink = ({to, children}) => (
-  <li>
-    <Link to={to}>
-      {children}
-    </Link>
-  </li>
-)
-
-export default () => (
-  <Footer>
-    <Container>
-      <Row>
-        <Col>
-          <h5>Features</h5>
-          <ul>
-            <FooterLink to="/">Item</FooterLink>
-          </ul>
-        </Col>
-        <Col>
-          <h5>Resources</h5>
-          <ul>
-            <FooterLink to="/">Item</FooterLink>
-          </ul>
-        </Col>
-        <Col>
-          <h5>Company</h5>
-          <ul>
-            <FooterLink to="/">Item</FooterLink>
-          </ul>
-        </Col>
-        <Col>
-          <h5>Contact Us</h5>
-          <SocialLink Icon={FaFacebookSquare}/>
-          <SocialLink Icon={FaInstagram}/>
-        </Col>
-      </Row>
-    </Container>
-  </Footer>
-)
+}

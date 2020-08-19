@@ -1,0 +1,90 @@
+.gallery
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  .gallery-title
+    font-family: Montserrat-Regular
+    padding-top: 5rem
+    font-size: .9rem
+    letter-spacing: 0.5em
+    word-spacing: 0em
+    line-height: 2.5em
+    //text-transform: none
+    //font-weight: normal
+  .gallery-title-description
+    font-family: LibreBaskerville-Regular
+    font-size: 2rem
+    letter-spacing: 0.25em
+    word-spacing: 0em
+    text-transform: none
+    font-weight: normal
+  .gallery-grid-container-wrapper
+    text-align: center
+    padding-top: 5rem
+
+  .gallery-grid-container
+    height: auto
+    display: grid
+  .item
+    display: flex
+    align-items: center
+    justify-content: center
+    background-size: cover
+    background-position: 50%
+    .item-title
+      color: white
+      font-family: CormorantGaramond-Medium
+      font-size: 2.2rem
+      letter-spacing: 0.019em
+      word-spacing: 0em
+      text-transform: none
+      font-weight: normal
+    .item-title-big
+      font-size: 3.5rem
+  .item-small1
+    grid-area: small1
+    background-image: url('/images/homepage/gallerysection/small1.jpg')
+  .item-small2
+    grid-area: small2
+    background-image: url('/images/homepage/gallerysection/small2.jpg')
+  .item-small3
+    grid-area: small3
+    background-image: url('/images/homepage/gallerysection/small3.jpg')
+  .item-small4
+    grid-area: small4
+    background-image: url('/images/homepage/gallerysection/small4.jpg')
+  .item-big1
+    grid-area: big1
+    background-image: url('/images/homepage/gallerysection/big1.jpg')
+  .item-big2
+    grid-area: big2
+    background-image: url('/images/homepage/gallerysection/big2.jpg')
+
+@media screen and (max-width: 1920px)
+  .gallery-grid-container
+    grid-template-columns: 18vw 18vw 18vw 18vw
+    grid-template-rows:  12vw 12vw 12vw
+    grid-template-areas: "small1 small2 big1 big1" "big2 big2 big1 big1" "big2 big2 small3 small4"
+    grid-column-gap: 1.4rem
+    grid-row-gap: 1.4rem
+
+@media screen and (max-width: 1080px)
+  .gallery-grid-container-wrapper
+    padding-top: 3rem !important
+    .item-title
+      font-size: 1.2rem !important
+      .item-title-big
+        font-size: 2rem !important
+
+  .gallery-title
+    padding-top: 2rem !important
+    font-size: .6rem !important
+  .gallery-title-description
+    font-size: 1rem !important
+  .gallery-grid-container
+    grid-template-columns: 42vw 42vw
+    grid-template-rows:  28vw 56vw 56vw 28vw
+    grid-template-areas: "small1 small2" "big1 big1" "big2 big2" "small3 small4"
+    grid-column-gap: .8rem
+    grid-row-gap: .8rem

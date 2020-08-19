@@ -1,0 +1,69 @@
+$imageHeight: 11rem
+$imgWrapperWidth: $imageHeight*6
+.footer
+  display: flex
+  flex-direction: column
+  align-items: center
+  // padding: 0 0
+  background-color: #DFE1E3
+  height: calc(8vw + 11rem)
+  .footer-img-wrapper
+    display: grid
+    height: $imageHeight
+    grid-template-columns: $imageHeight $imageHeight $imageHeight $imageHeight $imageHeight $imageHeight
+    grid-template-rows:  $imageHeight
+    grid-auto-columns: auto
+    .footer-social-link
+      width: $imgWrapperWidth
+      height: inherit
+      position: absolute
+      display: flex
+      align-items: center
+      justify-content: center
+      span
+        font-family: Montserrat-Medium
+        font-size: .6rem
+        letter-spacing: 0.5em
+        word-spacing: 0em
+        line-height: 3em
+        text-transform: none
+        font-weight: normal
+        background-color:  #FFFFFF
+        padding: .6em 2.6em
+    .item
+      background-position: 50%
+      background-size: cover
+    .item-small1
+      background-image: url('/images/footer/footer1.jpg')
+    .item-small2
+      background-image: url('/images/footer/footer2.jpg')
+    .item-small3
+      background-image: url('/images/footer/footer3.jpg')
+    .item-small4
+      background-image: url('/images/footer/footer4.jpg')
+    .item-small5
+      background-image: url('/images/footer/footer5.jpg')
+    .item-small6
+      background-image: url('/images/footer/footer6.jpg')
+  .footer-description
+    margin-top: 1.8rem
+    width: $imgWrapperWidth - 10rem
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    color: #444444
+    font-family: Montserrat-Regular
+    font-size: .7rem
+    letter-spacing: 0.5em
+    line-height: 2.5em
+
+// @media screen and (max-width: 1920px)
+//   .background-img
+//     margin: 8rem 0rem 8rem 8rem
+//     width: 54rem
+//     height: 36rem
+
+// @media screen and (max-width: 1080px)
+//   .background-img
+//     width: 600px
+//     height: 400px
